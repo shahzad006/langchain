@@ -1,4 +1,4 @@
-# 01 - Models
+# Models
 
 Models are the core components of LangChain applications.
 They are used to generate text, understand conversations, and convert text into numerical vectors.
