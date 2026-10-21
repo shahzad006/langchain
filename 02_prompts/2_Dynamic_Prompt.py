@@ -103,3 +103,15 @@ input_variables=["paper_input", "style_input", "length_input"]
 
 
 )
+
+
+# Fill the placeholders in the prompt template with the selected options
+prompt = template.invoke(
+{
+"paper_input": paper_input,
+"style_input": style_input,
+"length_input": length_input
+}
+)
+
+
