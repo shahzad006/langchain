@@ -42,17 +42,20 @@
 
 
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_core.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate , load_prompt
 from dotenv import load_dotenv
 import streamlit as st
-from langchain_core.prompts import PromptTemplate
+
 
 load_dotenv()
 
 
 st.header("Research Tool")
 
-model = ChatGoogleGenerativeAI(model="gemini-3.8-flash")
+model = ChatGoogleGenerativeAI(
+    model="gemini-3.8-flash",
+    temperature=0.2
+)
 
 
 # Variable paper selection
@@ -90,20 +93,10 @@ length_input = st.selectbox(
 
 
 
-# Template for dynamic prompt
-template = PromptTemplate(
+# Load template
 
-
-template=(
-"You are a research assistant. "
-f"Summarize the following research paper in {style_input} style "
-f"and provide a {length_input} summary:\n\n{paper_input}"
-),
-input_variables=["paper_input", "style_input", "length_input"]
-
-
-)
-
+template = load_prompt("template.json")
+    
 
 # Fill the placeholders in the prompt template with the selected options
 prompt = template.invoke(
