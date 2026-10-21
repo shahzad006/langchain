@@ -53,3 +53,14 @@ load_dotenv()
 st.header("Research Tool")
 
 model = ChatGoogleGenerativeAI(model="gemini-3.8-flash")
+
+
+# Variable paper selection
+paper_input = st.selectbox(
+"Select a research paper:",
+[
+"Paper 1: The Impact of AI on Healthcare",
+"Paper 2: Climate Change and Its Effects on Agriculture",
+"Paper 3: Quantum Computing: The Next Frontier",
+],
+)
