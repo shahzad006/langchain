@@ -48,3 +48,8 @@ import streamlit as st
 from langchain_core.prompts import PromptTemplate
 
 load_dotenv()
+
+
+st.header("Research Tool")
+
+model = ChatGoogleGenerativeAI(model="gemini-3.8-flash")
