@@ -77,3 +77,14 @@ style_input = st.selectbox(
 "Concise",
 ]
 )
+
+# Variable length
+length_input = st.selectbox(
+"Select a summary length:",
+[
+"Short",
+"Medium",
+"Long",
+]
+)
+
