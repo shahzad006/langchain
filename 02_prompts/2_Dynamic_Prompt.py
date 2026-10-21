@@ -64,3 +64,16 @@ paper_input = st.selectbox(
 "Paper 3: Quantum Computing: The Next Frontier",
 ],
 )
+
+
+
+
+# Variable style
+style_input = st.selectbox(
+"Select a summary style:",
+[
+"Beginner-friendly",
+"Technical",
+"Concise",
+]
+)
