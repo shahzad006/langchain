@@ -115,3 +115,16 @@ prompt = template.invoke(
 )
 
 
+
+
+
+
+
+
+
+# LlM invocation and display the result
+if st.button("Summarize"):
+    result = model.invoke(prompt)
+    st.subheader("Research Summary")
+    # st.write(result.content)
+    st.markdown(result.content)
