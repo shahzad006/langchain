@@ -10,9 +10,16 @@ load_dotenv()
 
 model = ChatGoogleGenerativeAI(model="gemini-3.8-flash",)
 
+chat_history = []
+
 while True:
-    user_input = input("Enter your question here: ")
+    user_input = input("You: ")
+    chat_history.append(("user", user_input))
     if user_input.lower() == "exit":
         break
-    result = model.invoke(user_input)
+    result = model.invoke(chat_history)
+    chat_history.append(result.text)
     print("AI: ",result.text)
+
+
+print("Exiting the chat. Goodbye!")
